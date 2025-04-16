@@ -18,6 +18,6 @@
         </rule>
       </rules>
     </rewrite>
-    <iisnode watchedFiles="web.config;*.js"/>
+    <iisnode nodeProcessCommandLine="node" watchedFiles="web.config;*.js"/>
   </system.webServer>
 </configuration>
