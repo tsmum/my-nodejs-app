@@ -1,0 +1,16 @@
+{
+    "name": "my-nodejs20-app",
+    "version": "1.0.0",
+    "description": "シンプルなNode.js 20アプリ",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "engines": {
+      "node": ">=20.0.0"
+    },
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }
