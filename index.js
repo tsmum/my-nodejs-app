@@ -1,23 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <system.webServer>
-    <webSocket enabled="false" />
-    <handlers>
-      <add name="iisnode" path="index.js" verb="*" modules="iisnode"/>
-    </handlers>
-    <rewrite>
-      <rules>
-        <rule name="StaticContent">
-          <action type="Rewrite" url="public{REQUEST_URI}"/>
-        </rule>
-        <rule name="DynamicContent">
-          <conditions>
-            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="True"/>
-          </conditions>
-          <action type="Rewrite" url="index.js"/>
-        </rule>
-      </rules>
-    </rewrite>
-    <iisnode nodeProcessCommandLine="node" watchedFiles="web.config;*.js"/>
-  </system.webServer>
-</configuration>
+import express from 'express';
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello World! これはNode.js 20を使用したAzure App Serviceにデプロイされたアプリです。');
+});
+
+app.listen(port, () => {
+  console.log(`アプリが http://localhost:${port} で実行中`);
+});
